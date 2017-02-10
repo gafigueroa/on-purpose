@@ -1,0 +1,26 @@
+.data-title h2{
+	color: white;
+	text-align: center;
+	font-size: 18px;
+}
+
+.title {
+	text-align: center;
+}
+
+.hidden { 
+	display: none; 
+}
+
+#location {
+	background-color: #D20b04;
+}
+
+#description {
+	background-color: #1279bf;
+}
+
+#duration {
+	background-color: #C7C31E;
+}
+
