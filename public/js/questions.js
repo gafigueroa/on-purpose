@@ -11,9 +11,7 @@ function initializePage() {
 
 
 function pressed(name, answer) {
-	var sentiment = require('sentiment');
-	console.log(name);
-	console.log(sentiment(answer));
+	console.log(answer);
 	$(".question-info").hide();
 	$("#"+name).fadeIn();
 }
