@@ -37,11 +37,11 @@
   </div>
   <div class="item item-body question-info" id="{{id}}">
   <label class="item item-input">
-    <input type="text" placeholder="{{placeholder}}">
+    <input type="text" id="input-{{id}}" placeholder="{{placeholder}}">
   </label>
   <br>
   <div align="center">
-  <button class="button button-balanced button-task" onclick="pressed((parseInt({{id}})+1).toString())">
+  <button class="button button-balanced button-task" onclick="pressed((parseInt({{id}})+1).toString(), document.getElementById('input-{{id}}').value)">
   Save
   </button></div>
   </div>
