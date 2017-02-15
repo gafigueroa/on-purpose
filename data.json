@@ -1,16 +1,29 @@
 {
 	"questions": [
 		{
-			"id":"0",
-			"question": "What’s your motivation behind the task?",
-			"placeholder": "Enter your answer",
-			"color":"#D20b04"
+			"question": "How motivated are you in the task?",
+			"placeholder": ""
 		},
 		{
-			"id":"1",
 			"question": "How interested are you in the task?",
-			"placeholder": "Enter why interested",
-			"color":"#1279bf"
+			"placeholder": "Enter why interested"
+		},
+		{
+			"question": "What stops or reduces your motivation?",
+			"placeholder": ""
+		},
+		{
+			"question": "What’s the reason behind finishing the task?",
+			"placeholder": ""
+		},
+		{
+			"question": "What is the first step you need to take?",
+			"placeholder": ""
 		}
+	],
+	"colors": [
+		"#D20b04",
+		"#1279bf",
+		"#D0DF3D"
 	]
 }

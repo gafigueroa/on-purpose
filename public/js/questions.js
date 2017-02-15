@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 function initializePage() {
 	$(".question-info").hide();
-	$("#0").fadeIn();
+	$('div.question-info:eq(0)').fadeIn();
 }
 
 
@@ -14,6 +14,12 @@ function pressed(name) {
 	console.log(name);
 	$(".question-info").hide();
 	$("#"+name).fadeIn();
+}
+
+function getColor(colors){
+	var color = colors[0];
+	colors.splice(0,1);
+	return color;
 }
 
 

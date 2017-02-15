@@ -1,7 +1,7 @@
 .data-title h2{
 	color: white;
 	text-align: center;
-	font-size: 18px;
+	font-size: 16px;
 }
 
 .title {
@@ -26,4 +26,8 @@
 
 .home-button {
 	width: 50%;
+}
+
+.button-task{
+	width: 40%;
 }
