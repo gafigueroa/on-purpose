@@ -1,0 +1,24 @@
+{
+	"intentions": [
+		{
+			"title":"Finish my coffee",
+			"description":"I want to finish my coffee because I want",
+			"duration": "10 minutes",
+			"answers":[
+				{
+					"question":"How motivated are you in the task?",
+					"answer":"Not that much motivated, I don't like coffee but I need to drink it"
+				},
+				{
+					"question":"What stops or reduces your motivation?",
+					"answer":"Coffee is too bitter."
+				},
+				{
+					"question":"What is the first step you need to take?",
+					"answer":"Hold the cup and drink some coffee"
+				}
+			]
+		}
+
+	]
+}

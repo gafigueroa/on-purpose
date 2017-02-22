@@ -11,6 +11,7 @@ var handlebars = require('express3-handlebars');
 var start = require('./routes/start');
 var home = require('./routes/home');
 var questions = require('./routes/questions');
+var intention = require('./routes/new-intention');
 // Example route
 // var user = require('./routes/user');
 
@@ -31,7 +32,7 @@ app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
-// development only
+// development onlyapp
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
@@ -42,6 +43,10 @@ app.get('/', home.login);
 app.get('/questions', questions.view);
 app.get('/home', home.view);
 app.get('/login', home.login);
+app.get('/intention', intention.view);
+app.get('/previous_intention', home.previous_intention);
+
+app.post('/save_intention', intention.save_intention);
 
 // Example route
 // app.get('/users', user.list);

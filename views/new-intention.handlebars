@@ -33,7 +33,7 @@
   </div>
   <div class="item item-body" id="location-info">
   <label class="item item-input">
-    <input type="text" placeholder="Insert your intention" id="intention-input">
+    <input type="text" placeholder="Insert your intention">
   </label>
   <br>
 
@@ -51,7 +51,7 @@
   </div>
   <div class="item item-body hidden" id="description-info">
   <label class="item item-input">
-    <input type="text" placeholder="Insert description" id = "description-input">
+    <input type="text" placeholder="Insert description">
   </label>
     <br>
   <div align="center">
@@ -67,7 +67,7 @@
   </div>
   <div class="item item-body hidden" id="duration-info">
   <label class="item item-input">
-    <input type="text" placeholder="Insert duration" id="duration-input">
+    <input type="text" placeholder="Insert duration">
   </label>
     <br>
   <div align="center">
@@ -78,16 +78,14 @@
 </div>
 
 
-<a href="/questions"><button class="button button-full button-balanced" style="bottom: 0; position:absolute;" 
-onclick="startIntention(document.getElementById('intention-input').value, 
-         document.getElementById('description-input').value,
-         document.getElementById('duration-input').value)">
+<button class="button button-full button-balanced" onclick="startIntention()" style="bottom: 0; position:absolute;">
   Start 
-</button></a>
+</button>
  
     </ion-pane>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 
   </body>
 </html>
