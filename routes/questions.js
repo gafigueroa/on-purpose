@@ -26,7 +26,7 @@ exports.view = function(req, res){
 		selected_questions[i].id = i;
 		selected_questions[i].color = data.colors[i];
 	}
-	console.log(selected_questions);
+	console.log(req.params);
 	res.render('questions',{
 		'questions':selected_questions,
 		'colors': data.colors
