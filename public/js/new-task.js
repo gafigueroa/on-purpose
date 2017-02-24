@@ -19,7 +19,12 @@ function startIntention(title, description, duration) {
 		"title": title,
 		"description": description,
 		"duration": duration
-	})
+	}, changeToQuestion)
+}
+
+function changeToQuestion(result){
+	console.log(result.id);
+	window.location.href = "/questions/"+result.id;
 }
 
 

@@ -41,12 +41,14 @@ if ('development' == app.get('env')) {
 app.get('/', home.login);
 
 app.get('/questions', questions.view);
+app.get('/questions/:id', questions.view);
 app.get('/home', home.view);
 app.get('/login', home.login);
 app.get('/intention', intention.view);
 app.get('/previous_intention', home.previous_intention);
 
 app.post('/save_intention', intention.save_intention);
+app.post('/save_answers', intention.save_answers);
 
 // Example route
 // app.get('/users', user.list);

@@ -29,14 +29,14 @@
         <p><small>{{duration}}</small></p>
         <p>{{description}}</p>
         {{#if answers}}
-        <button id="show-more-button" class="button-clear" onclick="showMore()"><p style="color: blue">Show answers</p></button>
+        <button id="show-more-button_{{id}}" class="button-clear" onclick="showMore('{{id}}')"><p style="color: blue">Show answers</p></button>
       </div>
-    <div id="intention-body" class="item item-body hidden">
+    <div id="intention-body_{{id}}" class="item item-body hidden">
     {{#each answers}}
     <p style="font-weight: bold;"><small>{{question}}</small></p>
     <p><small>{{answer}}</small></p>
     {{/each}}
-    <button class="button-clear" onclick="showMore()"><p style="color: blue">Show less</p></button>
+    <button class="button-clear" onclick="showMore('{{id}}')"><p style="color: blue">Show less</p></button>
   </div>
     {{/if}}
       </div>
