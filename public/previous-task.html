@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/previous-intention.js"></script>
+  </head>
+  <body ng-app="starter">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+       <a href="/home"><button class="button icon-left ion-chevron-left button-clear button-white">Back</button></a>
+        <h1 class="title">Previous Intentions</h1>
+      </ion-header-bar>
+
+      <br><br><br>
+      <div class="list card">
+       <div class="item">
+        <h2>Finish my coffee</h2>
+        <p><small>Date: February 15, 2017</small></p>
+        <button id="show-more-button" class="button-clear" onclick="showMore()"><p style="color: blue">Show answers</p></button>
+      </div>
+    <div id="intention-body" class="item item-body hidden">
+    <p style="font-weight: bold;"><small>How motivated are you in the task?</small></p>
+    <p><small>Not that much motivated, I don't like coffee but I need to drink it</small></p>
+    <p style="font-weight: bold;"><small>What stops or reduces your motivation?</small></p>
+    <p><small>Coffee is too bitter.</small></p>
+    <p style="font-weight: bold;"><small>What is the first step you need to take?</small></p>
+    <p><small>Hold the cup and drink some coffee</small></p>
+    <button class="button-clear" onclick="showMore()"><p style="color: blue">Show less</p></button>
+  </div>
+      </div>
+
+    </ion-pane>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  </body>
+</html>

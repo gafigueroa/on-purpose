@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/previous-intention.js"></script>
+  </head>
+  <body ng-app="starter">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+       <a href="/home"><button class="button icon-left ion-chevron-left button-clear button-white">Back</button></a>
+        <h1 class="title">Previous Intentions</h1>
+      </ion-header-bar>
+
+      <br><br><br>
+      {{#each intentions}}
+      <div class="list card">
+       <div class="item">
+        <h2>{{title}}</h2>
+        <p><small>{{duration}}</small></p>
+        <p>{{description}}</p>
+        {{#if answers}}
+        <button id="show-more-button" class="button-clear" onclick="showMore()"><p style="color: blue">Show answers</p></button>
+      </div>
+    <div id="intention-body" class="item item-body hidden">
+    {{#each answers}}
+    <p style="font-weight: bold;"><small>{{question}}</small></p>
+    <p><small>{{answer}}</small></p>
+    {{/each}}
+    <button class="button-clear" onclick="showMore()"><p style="color: blue">Show less</p></button>
+  </div>
+    {{/if}}
+      </div>
+      {{/each}}
+    </ion-pane>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  </body>
+</html>

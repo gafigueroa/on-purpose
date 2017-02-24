@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/questions.js"></script>
+
+  </head>
+  <body ng-app="starter">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+		<div type= "sumbit" class="buttons">
+		 <a href="/new-task.html"><button class="button icon-left ion-chevron-left button-clear button-white">Back</button></a>
+		 </div>
+		 <h1 class="title">Answer questions</h1>
+      </ion-header-bar>
+<br><br>
+
+
+{{#each questions}}
+<div class="list card question">
+  <div class="item data-title" onclick="pressed('{{id}}')" style="background-color: {{color}}">
+    <h2>{{question}}</h2>
+  </div>
+  <div class="item item-body question-info" id="{{id}}">
+  <label class="item item-input">
+    <input type="text" id="input-{{id}}" placeholder="{{placeholder}}">
+  </label>
+  <br>
+  <div align="center">
+  <button class="button button-balanced button-task" onclick="pressed((parseInt({{id}})+1).toString(), document.getElementById('input-{{id}}').value)">
+  Save
+  </button></div>
+  </div>
+</div>
+{{/each}}
+
+<a href="/home"><button class="button button-full button-balanced" style="bottom: 0; position:absolute;">
+  Send
+</button></a>
+    </ion-pane>
+
+
+  </body>
+</html>
+
