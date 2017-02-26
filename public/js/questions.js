@@ -45,15 +45,12 @@ function saveAnswers(id){
 	console.log(answers);
 	var count = Object.keys(saved_question).length;
 	if (count == 3){
-	$.post("/save_answers",{
-		"id": id,
-		"answers":answers
-	}, changeToHome)
+		$.post("/save_answers",{
+			"id": id,
+			"answers":answers
+		});
+		window.location.href = "/home";
 	}
-}
-
-function changeToHome(result){
-	window.location.href = "/home";
 }
 
 
