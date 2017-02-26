@@ -25,19 +25,35 @@ exports.save_answers = function(req, res){
 	var id = new_data.id;
 	var answers = new_data.answers;
 	var data = require('../intentions.json');
-	console.log(new_data);
+	
+	var total_score = 0;
+	var quantity = 0;
+
 	for (var i = 0; i < data.intentions.length; i++) {
 		var intention = data.intentions[i];
 		if (intention.id == id){
 			intention["answers"] = [];
 			for (var i = 0; i < answers.length; i++) {
 				var sent = sentiment(answers[i].answer);
+
+				//Saves the sentiment analysis results of the answer
 				answers[i].score = sent.score;
 				answers[i].comparative = sent.comparative;
+
+				total_score += sent.score;
+				quantity++;
+
 				intention.answers.push(answers[i]);
 				console.log(answers[i]);
 			}
+
+			//Saves a mean score of the sentiment analysis
+			if (quantity != 0){
+				var mean_score = total_score/quantity;
+				intention["score"] = mean_score;
+			}
 		}
 	}
+
 	console.log(data);
 }
