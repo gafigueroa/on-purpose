@@ -59,5 +59,5 @@ exports.save_answers = function(req, res){
 		}
 	}
 
-	console.log(data);
+	res.json({});
 }

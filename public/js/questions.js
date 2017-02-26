@@ -48,9 +48,12 @@ function saveAnswers(id){
 		$.post("/save_answers",{
 			"id": id,
 			"answers":answers
-		});
-		window.location.href = "/home";
+		}, changeToHome);
 	}
+}
+
+function changeToHome(result){
+	window.location.href = "/home";
 }
 
 
