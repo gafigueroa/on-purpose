@@ -18,6 +18,8 @@ exports.save_intention = function(req, res){
 }
 
 exports.save_answers = function(req, res){
+	var sentiment = require('sentiment');
+
 	var new_data = req.body;
 	
 	var id = new_data.id;
@@ -29,7 +31,11 @@ exports.save_answers = function(req, res){
 		if (intention.id == id){
 			intention["answers"] = [];
 			for (var i = 0; i < answers.length; i++) {
+				var sent = sentiment(answers[i].answer);
+				answers[i].score = sent.score;
+				answers[i].comparative = sent.comparative;
 				intention.answers.push(answers[i]);
+				console.log(answers[i]);
 			}
 		}
 	}
