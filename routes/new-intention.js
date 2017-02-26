@@ -8,6 +8,9 @@ exports.view = function(req, res){
 	});
 };
 
+exports.get_intentions_json = function(req, res){
+	res.json(data);
+}
 
 exports.save_intention = function(req, res){
 	var new_data = req.body;
@@ -16,6 +19,7 @@ exports.save_intention = function(req, res){
 	data.intentions.push(new_data);
 	res.json(new_data);
 }
+
 
 exports.save_answers = function(req, res){
 	var sentiment = require('sentiment');

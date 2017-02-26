@@ -8,17 +8,24 @@
 			"answers":[
 				{
 					"question":"How motivated are you in the task?",
-					"answer":"Hella."
+					"answer":"Hella.",
+					"score": 0,
+         			"comparative": 0
 				},
 				{
 					"question":"What stops or reduces your motivation?",
-					"answer":"I don't a have a pen in my house"
+					"answer":"I don't a have a pen in my house",
+					"score": 0,
+          			"comparative": 0
 				},
 				{
 					"question":"What is the first step you need to take?",
-					"answer":"Buy a pen. Also a journal."
+					"answer":"Buy a pen. Also a journal.",
+					"score": 0,
+          			"comparative": 0
 				}
-			]
+			],
+      		"score": 0
 		}
 
 	]
