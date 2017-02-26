@@ -47,7 +47,8 @@ app.get('/login', home.login);
 app.get('/intention', intention.view);
 app.get('/previous_intention', home.previous_intention);
 
-app.get('/intentions_json', intention.get_intentions_json);
+app.get('/intentions.json', intention.get_intentions_json);
+app.get('/data.json', questions.get_data_json);
 
 app.post('/save_intention', intention.save_intention);
 app.post('/save_answers', intention.save_answers);

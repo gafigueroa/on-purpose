@@ -33,6 +33,8 @@ exports.view = function(req, res){
 	});
 };
 
-
+exports.get_data_json = function(req,res){
+	res.json(data);
+}
 
 
