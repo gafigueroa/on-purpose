@@ -12,8 +12,32 @@ exports.login = function(req, res){
 };
 
 exports.previous_intention = function(req, res){
+	intentions.intentions.reverse();
 	res.render('previous-intention', {
 		"intentions": intentions.intentions
 	});
 }
 
+exports.intermediate_page = function(req,res){
+	var id = req.params.id;
+
+	var intention_found = false;
+
+	for (var i = 0; i < intentions.intentions.length; i++){
+		if (parseInt(intentions.intentions[i].id) == parseInt(id)){
+			var intention = intentions.intentions[i];
+			intention_found = true;
+			res.render('intermediate', {
+				'intention':intention.title,
+				'id':id
+			});
+		}
+	}
+
+	if (!intention_found){
+		res.render('intermediate', {
+				'intention':"",
+				'id':0
+		});
+	}
+}

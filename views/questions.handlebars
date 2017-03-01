@@ -5,17 +5,17 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="../manifest.json">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/questions.js"></script>
+    <script src="../lib/ionic/js/ionic.bundle.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/questions.js"></script>
 
   </head>
   <body ng-app="starter">
@@ -23,16 +23,16 @@
     <ion-pane>
       <ion-header-bar class="bar-stable">
 		<div type= "sumbit" class="buttons">
-		 <a href="/new-task.html"><button class="button icon-left ion-chevron-left button-clear button-white">Back</button></a>
+		 <a href="{{back}}"><button class="button icon-left ion-chevron-left button-clear button-white">Back</button></a>
 		 </div>
-		 <h1 class="title">Answer questions</h1>
+		 <h1 class="title" id="123">Answer questions</h1>
       </ion-header-bar>
 <br><br>
 
 
 {{#each questions}}
 <div class="list card question">
-  <div class="item data-title" onclick="pressed('{{id}}')" style="background-color: {{color}}">
+  <div class="item data-title" onclick="pressed('{{id}}', false)" style="background-color: {{color}}">
     <h2>{{question}}</h2>
   </div>
   <div class="item item-body question-info" id="{{id}}">
@@ -41,16 +41,16 @@
   </label>
   <br>
   <div align="center">
-  <button class="button button-balanced button-task" onclick="pressed((parseInt({{id}})+1).toString(), document.getElementById('input-{{id}}').value)">
+  <button class="button button-balanced button-task" onclick="pressed((parseInt({{id}})+1).toString(), '{{question}}' ,document.getElementById('input-{{id}}').value, true)">
   Save
   </button></div>
   </div>
 </div>
 {{/each}}
 
-<a href="/home"><button class="button button-full button-balanced" style="bottom: 0; position:absolute;">
-  Send
-</button></a>
+<button id="sendButton" class="button button-full button-stable" onclick="saveAnswers({{intention_id}},'{{back}}')" style="bottom: 0; position:absolute;">
+  Submit
+</button>
     </ion-pane>
 
 

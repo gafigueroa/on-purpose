@@ -20,7 +20,7 @@
        <a href="/home"><button class="button icon-left ion-chevron-left button-clear button-white">Back</button></a>
         <h1 class="title">Previous Intentions</h1>
       </ion-header-bar>
-
+      <ion-content overflow-scroll="true">
       <br><br><br>
       {{#each intentions}}
       <div class="list card">
@@ -29,18 +29,19 @@
         <p><small>{{duration}}</small></p>
         <p>{{description}}</p>
         {{#if answers}}
-        <button id="show-more-button" class="button-clear" onclick="showMore()"><p style="color: blue">Show answers</p></button>
-      </div>
-    <div id="intention-body" class="item item-body hidden">
+        <button id="show-more-button_{{id}}" class="button-clear" onclick="showMore('{{id}}')"><p style="color: blue">Show answers</p></button>
+    <div id="intention-body_{{id}}" class="item item-body hidden">
     {{#each answers}}
     <p style="font-weight: bold;"><small>{{question}}</small></p>
     <p><small>{{answer}}</small></p>
     {{/each}}
-    <button class="button-clear" onclick="showMore()"><p style="color: blue">Show less</p></button>
+    <button class="button-clear" onclick="showMore('{{id}}')"><p style="color: blue">Show less</p></button>
   </div>
     {{/if}}
       </div>
+      </div>
       {{/each}}
+    </ion-content> 
     </ion-pane>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   </body>

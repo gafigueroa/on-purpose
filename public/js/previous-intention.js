@@ -1,8 +1,8 @@
 'use strict';
 
-function showMore() {
-	$("#show-more-button").toggle();
-	$("#intention-body").toggle();
+function showMore(id) {
+	$("#show-more-button_"+id.toString()).toggle();
+	$("#intention-body_"+id.toString()).toggle();
 }
 
 

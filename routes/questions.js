@@ -26,13 +26,34 @@ exports.view = function(req, res){
 		selected_questions[i].id = i;
 		selected_questions[i].color = data.colors[i];
 	}
-	console.log(req.params);
 	res.render('questions',{
 		'questions':selected_questions,
-		'colors': data.colors
+		'colors': data.colors,
+		'intention_id':req.params.id,
+		'back':'/new-task.html'
 	});
 };
 
+exports.more = function(req, res){
+	
+	var selected_questions = getRandomArrayElements(data.questions, 3);
+	for (var i = 0; i < 3; i++) {
+		if (selected_questions[i].placeholder == ""){
+			selected_questions[i].placeholder = "Enter your answer";
+		}
+		selected_questions[i].id = i;
+		selected_questions[i].color = data.colors[i];
+	}
+	res.render('questions',{
+		'questions':selected_questions,
+		'colors': data.colors,
+		'intention_id':req.params.id,
+		'back':'/intermediate/'+req.params.id
+	});
+};
 
+exports.get_data_json = function(req,res){
+	res.json(data);
+}
 
 

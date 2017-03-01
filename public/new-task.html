@@ -28,7 +28,7 @@
 <br><br>
 
 <div class="list card">
-  <div class="item data-title" onclick="pressed('location-info')" id="location">
+  <div class="item data-title" onclick="pressed('location-info', false)" id="location">
     <h2>Intention</h2>
   </div>
   <div class="item item-body" id="location-info">
@@ -38,7 +38,7 @@
   <br>
 
   <div align="center">
-  <button class="button button-balanced button-task" onclick="pressed('description-info')">
+  <button class="button button-balanced button-task" onclick="pressed('description-info', true)">
   Save
   </button></div>
   </div>
@@ -46,7 +46,7 @@
 </div>
 
 <div class="list card">
-  <div class="item data-title" onclick="pressed('description-info')" id="description">
+  <div class="item data-title" onclick="pressed('description-info', false)" id="description">
     <h2>Description</h2>
   </div>
   <div class="item item-body hidden" id="description-info">
@@ -55,14 +55,14 @@
   </label>
     <br>
   <div align="center">
-  <button class="button button-balanced button-task" onclick="pressed('duration-info')">
+  <button class="button button-balanced button-task" onclick="pressed('duration-info', true)">
   Save
   </button></div>
   </div>
 </div>
 
 <div class="list card">
-  <div class="item data-title" onclick="pressed('duration-info')" id="duration">
+  <div class="item data-title" onclick="pressed('duration-info', false)" id="duration">
     <h2>Duration</h2>
   </div>
   <div class="item item-body hidden" id="duration-info">
@@ -71,19 +71,19 @@
   </label>
     <br>
   <div align="center">
-  <button class="button button-balanced button-task" onclick="pressed()">
+  <button class="button button-balanced button-task" onclick="pressed('saved_info',true)">
   Save
   </button></div>
   </div>
 </div>
 
 
-<a href="/questions"><button class="button button-full button-balanced" style="bottom: 0; position:absolute;" 
+<button id="sendButton" class="button button-full button-stable" style="bottom: 0; position:absolute;" 
 onclick="startIntention(document.getElementById('intention-input').value, 
          document.getElementById('description-input').value,
          document.getElementById('duration-input').value)">
   Start 
-</button></a>
+</button>
  
     </ion-pane>
 
