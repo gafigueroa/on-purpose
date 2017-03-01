@@ -59,7 +59,7 @@ function changeToHome(result){
 	If we want to test the intermediate page, uncomment this
 	window.location.href = "/intermediate/"+intention_id;
 	*/
-	window.location.href = '/home';
+	window.location.href = "/intermediate/"+intention_id;
 	
 }
 
