@@ -42,10 +42,13 @@ app.get('/', home.login);
 
 app.get('/questions', questions.view);
 app.get('/questions/:id', questions.view);
+app.get('/more_questions/:id', questions.more);
 app.get('/home', home.view);
 app.get('/login', home.login);
 app.get('/intention', intention.view);
 app.get('/previous_intention', home.previous_intention);
+
+app.get('/intermediate/:id', home.intermediate_page);
 
 app.get('/intentions.json', intention.get_intentions_json);
 app.get('/data.json', questions.get_data_json);

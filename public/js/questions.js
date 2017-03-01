@@ -4,6 +4,8 @@ var answers = [];
 
 var saved_question = {};
 
+var intention_id = 0;
+
 $(document).ready(function() {
 	initializePage();
 })
@@ -41,8 +43,8 @@ function getColor(colors){
 	return color;
 }
 
-function saveAnswers(id){
-	console.log(answers);
+function saveAnswers(id, back){
+	intention_id = id;
 	var count = Object.keys(saved_question).length;
 	if (count == 3){
 		$.post("/save_answers",{
@@ -53,7 +55,13 @@ function saveAnswers(id){
 }
 
 function changeToHome(result){
-	window.location.href = "/home";
+	/*
+	If we want to test the intermediate page, uncomment this
+	window.location.href = "/intermediate/"+intention_id;
+	*/
+	
+	window.location.href = '/home';
+	
 }
 
 

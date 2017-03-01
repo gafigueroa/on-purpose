@@ -23,7 +23,7 @@
     <ion-pane>
       <ion-header-bar class="bar-stable">
 		<div type= "sumbit" class="buttons">
-		 <a href="/new-task.html"><button class="button icon-left ion-chevron-left button-clear button-white">Back</button></a>
+		 <a href="{{back}}"><button class="button icon-left ion-chevron-left button-clear button-white">Back</button></a>
 		 </div>
 		 <h1 class="title" id="123">Answer questions</h1>
       </ion-header-bar>
@@ -48,8 +48,8 @@
 </div>
 {{/each}}
 
-<button id="sendButton" class="button button-full button-stable" onclick="saveAnswers({{intention_id}})" style="bottom: 0; position:absolute;">
-  Send
+<button id="sendButton" class="button button-full button-stable" onclick="saveAnswers({{intention_id}},'{{back}}')" style="bottom: 0; position:absolute;">
+  Submit
 </button>
     </ion-pane>
 
