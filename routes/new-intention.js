@@ -36,6 +36,9 @@ exports.save_answers = function(req, res){
 	for (var i = 0; i < data.intentions.length; i++) {
 		var intention = data.intentions[i];
 		if (intention.id == id){
+			if (!(answers in intention)){
+				intention["answers"] = [];
+			}
 			//intention["answers"] = [];
 			for (var i = 0; i < answers.length; i++) {
 				var sent = sentiment(answers[i].answer);
