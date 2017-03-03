@@ -23,6 +23,9 @@ function pressed(name, save) {
 	console.log(count);
 }
 
+function explainIntention(){
+	$("#intentionExplanation").toggle();
+}
 
 function startIntention(title, description, duration) {
 	var count = Object.keys(saved).length;

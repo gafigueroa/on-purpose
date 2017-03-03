@@ -29,7 +29,11 @@
 
 <div class="list card">
   <div class="item data-title" onclick="pressed('location-info', false)" id="location">
-    <h2>Intention</h2>
+    <h2>Intention <input type="image" class="img" src="img/question.png" onclick="explainIntention()"/>
+    </h2>
+  </div>
+  <div id="intentionExplanation" class="hidden white_content">
+      <p>An intention is any action, goal or event.</p>
   </div>
   <div class="item item-body" id="location-info">
   <label class="item item-input">
