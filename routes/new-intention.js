@@ -8,6 +8,18 @@ exports.view = function(req, res){
 	});
 };
 
+exports.view_A = function(req, res){
+	res.render('new-intention_A', {
+		"intentions": data.intentions
+	});
+};
+
+exports.view_B = function(req, res){
+	res.render('new-intention_B', {
+		"intentions": data.intentions
+	});
+};
+
 exports.get_intentions_json = function(req, res){
 	res.json(data);
 }
