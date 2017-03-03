@@ -1,11 +1,11 @@
 {
 	"questions": [
 		{
-			"question": "How motivated are you in the task?",
+			"question": "How motivated are you in the intention?",
 			"placeholder": ""
 		},
 		{
-			"question": "How interested are you in the task?",
+			"question": "How interested are you in the intention?",
 			"placeholder": "Enter why interested"
 		},
 		{
@@ -13,7 +13,7 @@
 			"placeholder": ""
 		},
 		{
-			"question": "What’s the reason behind finishing the task?",
+			"question": "What’s the reason behind finishing the intention?",
 			"placeholder": ""
 		},
 		{
