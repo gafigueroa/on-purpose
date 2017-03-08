@@ -23,6 +23,21 @@
     src: url(../font/Brandon_bld.otf);
 }
 
+.base {
+  background-color: #FFFFFF;
+}
+
+
+.home-button {
+  width: 50%;
+  background-color: #445878;
+  color: #FFFFFF;
+}
+
+.bar-stable {
+  color: #EEEFF7;
+}
+
 .title {
 	text-align: center;
 }
@@ -94,6 +109,7 @@
   font-size: 15px;
 }
 
+
 .bar-stable h1 {
   font-family: brandon_bld;
   font-size: 25px;
@@ -104,10 +120,6 @@
   font-size: 25px;
 }
 
-
-.home-button {
-	width: 50%;
-}
 
 .button-task{
 	width: 40%;
