@@ -7,6 +7,7 @@ $(document).ready(function() {
 	initializePage();
 })
 
+
 function initializePage() {
 	amount_cards = parseInt($("#amount_cards").text());
 	console.log(amount_cards);
@@ -31,6 +32,7 @@ function pressed(name, save) {
 
 function explainIntention(){
 	$("#intentionExplanation").toggle();
+	ga('send', 'event', 'help', 'click');
 }
 
 function startIntention(title, description, duration) {
