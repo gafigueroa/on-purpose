@@ -1,17 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-93247907-1', 'auto');
-      //ga('send', 'pageview');
-      ga('send', 'event', 'new', 'click');
-    </script>
-    {{#if A_version}}
+      {{#if A_version}}
           <!-- Google Analytics Content Experiment code -->
       <script>function utmx_section(){}function utmx(){}(function(){var
       k='142235112-0',d=document,l=d.location,c=d.cookie;
@@ -28,6 +18,16 @@
       <!-- End of Google Analytics Content Experiment code -->
 
       {{/if}}
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93247907-1', 'auto');
+      //ga('send', 'pageview');
+      ga('send', 'event', 'new', 'click');
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
