@@ -65,17 +65,10 @@
   overflow: auto;
 }
 
-#location {
-	background-color: #D20b04;
+.data-title {
+	background-color: #445878;
 }
 
-#description {
-	background-color: #1279bf;
-}
-
-#duration {
-	background-color: #C7C31E;
-}
 
 .button {
   font-family: brandon_reg;
