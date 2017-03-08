@@ -35,6 +35,17 @@ function explainIntention(){
 
 function startIntention(title, description, duration) {
 	var count = Object.keys(saved).length;
+
+    var mean_amount = description.split(" ").length;
+    if (amount_cards == 3){
+    	mean_amount += duration.split(" ").length;
+    }
+    mean_amount /= (amount_cards-1);
+
+    for (var i = 0; i < mean_amount; i++) {
+    	ga('send', 'event', 'word', 'count');
+    }
+
 	if (count == amount_cards){
 		$.post("/save_intention",{
 			"title": title,
