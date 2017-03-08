@@ -16,13 +16,13 @@ function explainScore(){
 	$("#statsExplanation").toggle();
 }
 
-var moods = ["really positive",
+var moods = ["very positive",
 			"positive", 
 			"somewhat positive", 
-			"normal", 
+			"neutral", 
 			"somewhat negative", 
 			"negative",
-			"really negative"];
+			"very negative"];
 
 function showStats(result){
 	var total_score = 0;
@@ -32,7 +32,6 @@ function showStats(result){
 		if ("score" in intention){
 			total_score += intention.score;
 			amount++;
-	
 		}
 	}	
 	var mean_score = total_score/amount;
