@@ -7,38 +7,45 @@
 
     <link rel="manifest" href="manifest.json">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/new-task.js"></script>
+    <script src="js/new-intention.js"></script>
 
   </head>
   <body ng-app="starter">
 
     <ion-pane>
       <ion-header-bar class="bar-stable">
-		<div class="buttons">
-		 <a href="/home"><button class="button icon-left ion-chevron-left button-clear button-white">Back</button></a>
-		 </div>
-		 <h1 class="title">Start your intention</h1>
+    <div class="buttons">
+     <a href="/home"><button class="button icon-left ion-chevron-left button-clear button-white">Back</button></a>
+     </div>
+     <h1 class="title">Start your intention</h1>
       </ion-header-bar>
 <br><br>
 
+{{#if A_version}}
+<div class="hidden" id="amount_cards">3</div>
 <div class="list card">
-  <div class="item data-title" onclick="pressed('location-info')" id="location">
-    <h2>Intention</h2>
+  <div class="item data-title" onclick="pressed('location-info', false)" id="location">
+    <h2>Intention <input type="image" class="img" src="img/question.png" onclick="explainIntention()"/>
+    </h2>
+  </div>
+  <div id="intentionExplanation" class="hidden white_content">
+      <p>An intention is any action, goal or event.</p>
   </div>
   <div class="item item-body" id="location-info">
   <label class="item item-input">
-    <input type="text" placeholder="Insert your intention">
+    <input type="text" placeholder="Insert your intention" id="intention-input">
   </label>
   <br>
 
   <div align="center">
-  <button class="button button-balanced button-task" onclick="pressed('description-info')">
+  <button class="button button-balanced button-task" onclick="pressed('description-info', true)">
   Save
   </button></div>
   </div>
@@ -46,46 +53,95 @@
 </div>
 
 <div class="list card">
-  <div class="item data-title" onclick="pressed('description-info')" id="description">
+  <div class="item data-title" onclick="pressed('description-info', false)" id="description">
     <h2>Description</h2>
   </div>
   <div class="item item-body hidden" id="description-info">
   <label class="item item-input">
-    <input type="text" placeholder="Insert description">
+    <input type="text" placeholder="Insert description" id = "description-input">
   </label>
     <br>
   <div align="center">
-  <button class="button button-balanced button-task" onclick="pressed('duration-info')">
+  <button class="button button-balanced button-task" onclick="pressed('duration-info', true)">
   Save
   </button></div>
   </div>
 </div>
 
 <div class="list card">
-  <div class="item data-title" onclick="pressed('duration-info')" id="duration">
+  <div class="item data-title" onclick="pressed('duration-info', false)" id="duration">
     <h2>Duration</h2>
   </div>
   <div class="item item-body hidden" id="duration-info">
   <label class="item item-input">
-    <input type="text" placeholder="Insert duration">
+    <input type="text" placeholder="Insert duration" id="duration-input">
   </label>
     <br>
   <div align="center">
-  <button class="button button-balanced button-task" onclick="pressed()">
+  <button class="button button-balanced button-task" onclick="pressed('saved_info',true)">
   Save
   </button></div>
   </div>
 </div>
 
-
-<button class="button button-full button-balanced" onclick="startIntention()" style="bottom: 0; position:absolute;">
+<button id="sendButton" class="button button-full button-stable" style="bottom: 0; position:absolute;" 
+onclick="startIntention(document.getElementById('intention-input').value, 
+         document.getElementById('description-input').value,
+         document.getElementById('duration-input').value)">
   Start 
 </button>
+
+{{else}}
+<div class="hidden" id="amount_cards">2</div>
+<div class="list card">
+  <div class="item data-title" onclick="pressed('location-info', false)" id="location">
+    <h2>What is your intention?<input type="image" class="img" src="img/question.png" onclick="explainIntention()"/>
+    </h2>
+  </div>
+  <div id="intentionExplanation" class="hidden white_content">
+      <p>An intention is any action, goal or event.</p>
+  </div>
+  <div class="item item-body" id="location-info">
+  <label class="item item-input">
+    <input type="text" placeholder="Insert your intention" id="intention-input">
+  </label>
+  <br>
+
+  <div align="center">
+  <button class="button button-balanced button-task" onclick="pressed('description-info', true)">
+  Save
+  </button></div>
+  </div>
+  </div>
+</div>
+
+<div class="list card">
+  <div class="item data-title" onclick="pressed('description-info', false)" id="description">
+    <h2>Elaborate</h2>
+  </div>
+  <div class="item item-body hidden" id="description-info">
+  <label class="item item-input">
+    <input type="text" placeholder="Explain more about your intention" id = "description-input">
+  </label>
+    <br>
+  <div align="center">
+  <button class="button button-balanced button-task" onclick="pressed('', true)">
+  Save
+  </button></div>
+  </div>
+</div>
+
+<button id="sendButton" class="button button-full button-stable" style="bottom: 0; position:absolute;" 
+onclick="startIntention(document.getElementById('intention-input').value, 
+         document.getElementById('description-input').value)">
+  Start 
+</button>
+
+{{/if}}
  
     </ion-pane>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
 
   </body>
 </html>

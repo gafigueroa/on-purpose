@@ -4,7 +4,30 @@ var data = require('../intentions.json');
 
 exports.view = function(req, res){
 	res.render('new-intention', {
-		"intentions": data.intentions
+		"intentions": data.intentions,
+		"A_version": true
+	});
+};
+
+exports.viewAB = function(req, res){
+	var chosenPage = Math.random() < 0.5;
+	res.render('new-intention', {
+		"intentions": data.intentions,
+		"A_version": chosenPage
+	});
+}
+
+exports.viewA = function(req, res){
+	res.render('new-intention', {
+		"intentions": data.intentions,
+		"A_version": true
+	});
+};
+
+exports.viewB = function(req, res){
+	res.render('new-intention', {
+		"intentions": data.intentions,
+		"A_version": false
 	});
 };
 
