@@ -42,9 +42,9 @@ function startIntention(title, description, duration) {
     }
     mean_amount /= (amount_cards-1);
 
-    for (var i = 0; i < mean_amount; i++) {
-    	ga('send', 'event', 'word', 'count');
-    }
+    mean_amount = Math.round(mean_amount);
+
+    ga('send', 'event', 'word', 'count', 'words in intention', mean_amount);
 
 	if (count == amount_cards){
 		$.post("/save_intention",{
