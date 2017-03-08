@@ -1,11 +1,11 @@
 {
 	"questions": [
 		{
-			"question": "How motivated are you in the intention?",
+			"question": "How motivated are you about this intention?",
 			"placeholder": ""
 		},
 		{
-			"question": "How interested are you in the intention?",
+			"question": "How interested are you in this intention?",
 			"placeholder": "Enter why interested"
 		},
 		{
