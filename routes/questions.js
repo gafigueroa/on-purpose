@@ -30,7 +30,7 @@ exports.view = function(req, res){
 		'questions':selected_questions,
 		'colors': data.colors,
 		'intention_id':req.params.id,
-		'back':'/new-task.html'
+		'back':'/intention'
 	});
 };
 
