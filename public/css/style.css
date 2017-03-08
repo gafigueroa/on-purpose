@@ -4,6 +4,25 @@
 	font-size: 16px;
 }
 
+@font-face {
+    font-family: brandon_light;
+    src: url(../font/Brandon_light.otf);
+}
+@font-face {
+    font-family: brandon_reg;
+    src: url(../font/Brandon_reg.otf);
+}
+
+@font-face {
+    font-family: brandon_med;
+    src: url(../font/Brandon_med.otf);
+}
+
+@font-face {
+    font-family: brandon_bld;
+    src: url(../font/Brandon_bld.otf);
+}
+
 .title {
 	text-align: center;
 }
@@ -42,6 +61,49 @@
 #duration {
 	background-color: #C7C31E;
 }
+
+.button {
+  font-family: brandon_reg;
+  font-size: 18px;
+}
+
+.item h2 {
+  font-family: brandon_reg;
+  font-size: 18px;
+}
+
+.item input {
+  font-family: brandon_reg;
+  font-size: 18px;
+}
+
+.item span {
+  font-family: brandon_reg;
+  font-size: 18px;
+}
+
+.item p {
+  font-family: brandon_reg;
+  font-size: 18px;
+}
+
+
+
+.tab-item {
+  font-family: brandon_reg;
+  font-size: 15px;
+}
+
+.bar-stable h1 {
+  font-family: brandon_bld;
+  font-size: 25px;
+}
+
+.bar-stable button {
+  font-family: brandon_bld;
+  font-size: 25px;
+}
+
 
 .home-button {
 	width: 50%;
