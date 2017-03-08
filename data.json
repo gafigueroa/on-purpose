@@ -17,7 +17,39 @@
 			"placeholder": ""
 		},
 		{
-			"question": "What is the first step you need to take?",
+			"question": "What is the smallest thing you can do to get started?",
+			"placeholder": ""
+		},
+		{
+			"question": "What will you learn from this experience?",
+			"placeholder": ""
+		},
+		{
+			"question": "What do you want from this experience?",
+			"placeholder": ""
+		},
+		{
+			"question": "What do you not want from this experience?",
+			"placeholder": ""
+		},
+		{
+			"question": "What emotions go with this intention? Why?",
+			"placeholder": ""
+		},
+		{
+			"question": "How will you be attentive?",
+			"placeholder": ""
+		},
+		{
+			"question": "How can you make this into an opportunity?",
+			"placeholder": ""
+		},
+		{
+			"question": "How will you think of yourself differently if you do this?",
+			"placeholder": ""
+		},
+		{
+			"question": "Who will benefit from this? How?",
 			"placeholder": ""
 		}
 	],
