@@ -5,7 +5,7 @@ var data = require('../intentions.json');
 exports.view = function(req, res){
 	res.render('new-intention', {
 		"intentions": data.intentions,
-		"A_version": true
+		"A_version":  false
 	});
 };
 

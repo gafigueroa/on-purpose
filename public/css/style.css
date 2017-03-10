@@ -1,3 +1,11 @@
+.about h4{
+  color: white;
+}
+
+.about p {
+  color: white;
+}
+
 /*Lets start with the cloud formation rather*/
 
 /*The container will also serve as the SKY*/
@@ -32,6 +40,7 @@ body {
   
   position: relative; 
 }
+
 
 .cloud:before, .cloud:after {
   content: '';
