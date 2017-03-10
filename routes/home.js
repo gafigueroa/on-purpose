@@ -20,10 +20,10 @@ exports.previous_intention = function(req, res){
 			"negative",
 			"very negative"];
 
-	intentions.intentions.reverse();
+	var intentions_copy = intentions.intentions.slice().reverse();
 	console.log("start");
-	for (var i = 0; i < intentions.intentions.length; i++){
-		var intention = intentions.intentions[i];
+	for (var i = 0; i < intentions_copy; i++){
+		var intention = intentions_copy[i];
 		var mean_score = intention.score;
 		if (mean_score < -10){
 			mean_score = -10;
@@ -38,9 +38,8 @@ exports.previous_intention = function(req, res){
 		intention['sentiment'] = text;
 
 	}
-	console.log(intentions.intentions);
 	res.render('previous-intention', {
-		"intentions": intentions.intentions
+		"intentions": intentions_copy
 	});
 }
 
