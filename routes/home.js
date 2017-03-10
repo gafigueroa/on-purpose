@@ -12,7 +12,33 @@ exports.login = function(req, res){
 };
 
 exports.previous_intention = function(req, res){
+	var moods = ["very positive",
+			"positive", 
+			"somewhat positive", 
+			"neutral", 
+			"somewhat negative", 
+			"negative",
+			"very negative"];
+
 	intentions.intentions.reverse();
+	console.log("start");
+	for (var i = 0; i < intentions.intentions.length; i++){
+		var intention = intentions.intentions[i];
+		var mean_score = intention.score;
+		if (mean_score < -10){
+			mean_score = -10;
+		}
+		if (mean_score > 10){
+			mean_score = 10;
+		}
+		mean_score += 10;
+		var mood_position = 6 - Math.floor(mean_score/3); 
+		var text = "Average mood of your answers: "
+		text += moods[mood_position];
+		intention['sentiment'] = text;
+
+	}
+	console.log(intentions.intentions);
 	res.render('previous-intention', {
 		"intentions": intentions.intentions
 	});
