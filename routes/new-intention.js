@@ -4,7 +4,30 @@ var data = require('../intentions.json');
 
 exports.view = function(req, res){
 	res.render('new-intention', {
-		"intentions": data.intentions
+		"intentions": data.intentions,
+		"A_version":  false
+	});
+};
+
+exports.viewAB = function(req, res){
+	var chosenPage = Math.random() < 0.5;
+	res.render('new-intention', {
+		"intentions": data.intentions,
+		"A_version": chosenPage
+	});
+}
+
+exports.viewA = function(req, res){
+	res.render('new-intention', {
+		"intentions": data.intentions,
+		"A_version": true
+	});
+};
+
+exports.viewB = function(req, res){
+	res.render('new-intention', {
+		"intentions": data.intentions,
+		"A_version": false
 	});
 };
 
@@ -36,6 +59,9 @@ exports.save_answers = function(req, res){
 	for (var i = 0; i < data.intentions.length; i++) {
 		var intention = data.intentions[i];
 		if (intention.id == id){
+			if (!(answers in intention)){
+				intention["answers"] = [];
+			}
 			//intention["answers"] = [];
 			for (var i = 0; i < answers.length; i++) {
 				var sent = sentiment(answers[i].answer);

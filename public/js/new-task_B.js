@@ -13,11 +13,10 @@ function pressed(name, save) {
 	}
 	$("#location-info").hide();
 	$("#description-info").hide();
-	$("#duration-info").hide();
 	$("#"+name).fadeIn();
 
 	var count = Object.keys(saved).length;
-	if (count == 3){
+	if (count == 2){
 		$("#sendButton").addClass("button-balanced");
 	}
 
@@ -30,11 +29,10 @@ function explainIntention(){
 
 function startIntention(title, description, duration) {
 	var count = Object.keys(saved).length;
-	if (count == 3){
+	if (count == 2){
 		$.post("/save_intention",{
 			"title": title,
-			"description": description,
-			"duration": duration
+			"description": description
 		}, changeToQuestion);
 	}
 }
