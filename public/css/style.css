@@ -1,6 +1,15 @@
-/* Clouud animation courtesy of http://thecodeplayer.com/walkthrough/pure-css3-animated-clouds-background */
-/*Lets start with the cloud formation rather*/
 
+
+.about h4{
+  color: white;
+}
+
+.about p {
+  color: white;
+}
+
+/* Cloud animation courtesy of http://thecodeplayer.com/walkthrough/pure-css3-animated-clouds-background */
+/*Lets start with the cloud formation rather*/
 /*The container will also serve as the SKY*/
 
 *{ margin: 0; padding: 0;}
@@ -33,6 +42,7 @@ body {
   
   position: relative; 
 }
+
 
 .cloud:before, .cloud:after {
   content: '';
