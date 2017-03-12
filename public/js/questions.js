@@ -55,11 +55,15 @@ function saveAnswers(id, back){
 }
 
 function changeToHome(result){
-	/*
-	If we want to test the intermediate page, uncomment this
+	
+	//If we want to test the intermediate page, uncomment this
 	window.location.href = "/intermediate/"+intention_id;
-	*/
+	
+
+	/*
+	//If we want to delete intermediate page
 	window.location.href = '/home';
+	*/
 	
 }
 

@@ -218,6 +218,10 @@ body {
   font-size: 18px;
 }
 
+h1 {
+  font-family: brandon_reg;
+}
+
 .item h2 {
   font-family: brandon_reg;
   font-size: 18px;
@@ -256,6 +260,10 @@ body {
   font-size: 25px;
 }
 
+.button-more{
+  color: #426999 !important;
+  border-color: #426999 !important;
+}
 
 .button-task{
 	width: 40%;
