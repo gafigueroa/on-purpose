@@ -57,6 +57,16 @@ function startIntention(title, description, duration) {
 	}
 }
 
+function editIntention(title, description, id) {
+	$.post("/edit_intention",{
+			"id": id,
+			"title": title,
+			"description": description
+	}, changeToQuestion);
+	
+}
+
+
 function changeToQuestion(result){
 	window.location.href = "/questions/"+result.id;
 }

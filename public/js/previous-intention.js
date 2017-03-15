@@ -11,7 +11,7 @@ function deleteIntention(id) {
 }
 
 function edit(id) {
-
+	window.location.href = "/intention/"+id;
 }
 
 

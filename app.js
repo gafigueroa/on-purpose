@@ -49,6 +49,7 @@ app.get('/login', home.login);
 app.get('/delete/:id', home.delete_intention);
 
 app.get('/intention', intention.view);
+app.get('/intention/:id', intention.viewId);
 app.get('/intentionA', intention.viewA);
 app.get('/intentionB', intention.viewB);
 
@@ -60,7 +61,9 @@ app.get('/intentions.json', intention.get_intentions_json);
 app.get('/data.json', questions.get_data_json);
 
 app.post('/save_intention', intention.save_intention);
+app.post('/edit_intention', intention.edit_intention);
 app.post('/save_answers', intention.save_answers);
+
 
 // Example route
 // app.get('/users', user.list);

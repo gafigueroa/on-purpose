@@ -5,9 +5,26 @@ var data = require('../intentions.json');
 exports.view = function(req, res){
 	res.render('new-intention', {
 		"intentions": data.intentions,
-		"A_version":  false
+		"new":  true
 	});
 };
+
+exports.viewId = function(req,res){
+	var id = req.params.id;
+	var intention = null;
+	for (var i = 0; i < data.intentions.length; i++){
+		var intention = data.intentions[i];
+		if (intention != null && parseInt(intention.id) == parseInt(id)){
+			res.render('new-intention', {
+				"intentions": data.intentions,
+				"new": false,
+				"title": intention.title,
+				"description": intention.description,
+				"id": id
+			});
+		}
+	}
+}
 
 exports.viewAB = function(req, res){
 	var chosenPage = Math.random() < 0.5;
@@ -54,6 +71,19 @@ exports.save_intention = function(req, res){
 	new_data["id"] = new_id;
 	data.intentions.push(new_data);
 	res.json(new_data);
+}
+
+exports.edit_intention = function(req,res){
+	var id = req.body.id;
+	var intention = null;
+	for (var i = 0; i < data.intentions.length; i++){
+		var intention = data.intentions[i];
+		if (intention != null && parseInt(intention.id) == parseInt(id)){
+			intention.title = req.body.title;
+			intention.description = req.body.description;
+		}
+	}
+	res.json(req.body);
 }
 
 
