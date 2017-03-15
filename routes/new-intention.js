@@ -101,10 +101,12 @@ exports.save_answers = function(req, res){
 
 	for (var i = 0; i < data.intentions.length; i++) {
 		var intention = data.intentions[i];
-		if (intention != null && intention.id == id){
-			if (!(answers in intention)){
+		if (intention != null && parseInt(intention.id) == parseInt(id)){
+			console.log(intention);
+			if (!("answers" in intention)){
 				intention["answers"] = [];
 			}
+			console.log(intention);
 			//intention["answers"] = [];
 			for (var i = 0; i < answers.length; i++) {
 				var sent = sentiment(answers[i].answer);
@@ -117,7 +119,7 @@ exports.save_answers = function(req, res){
 				quantity++;
 
 				intention.answers.push(answers[i]);
-				console.log(answers[i]);
+				console.log(intention);
 			}
 
 			//Saves a mean score of the sentiment analysis
