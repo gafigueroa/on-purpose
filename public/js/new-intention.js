@@ -62,10 +62,13 @@ function editIntention(title, description, id) {
 			"id": id,
 			"title": title,
 			"description": description
-	}, changeToQuestion);
+	}, changeToIntermediate);
 	
 }
 
+function changeToIntermediate(result){
+	window.location.href = "/intermediate/"+result.id;
+}
 
 function changeToQuestion(result){
 	window.location.href = "/questions/"+result.id;
