@@ -25,7 +25,15 @@
       {{#each intentions}}
       <div class="list card">
        <div class="item">
+       <div class="wrapper">
+       <div class="first">
         <h2>{{title}}</h2>
+        </div>
+        <div class="second" align="right">
+        <button class="button button-small button-clear button-dark icon ion-edit"></button>
+        <button class="button button-small button-clear button-dark icon ion-close-round" onclick="deleteIntention('{{id}}')"></button>
+        </div>
+        </div>
         <p><small>{{sentiment}}</small></p>
         <p>{{description}}</p>
         {{#if answers}}

@@ -5,6 +5,13 @@ function showMore(id) {
 	$("#intention-body_"+id.toString()).toggle();
 }
 
+function deleteIntention(id) {
+	$.get("/delete/"+id);
+	location.reload();
+}
 
+function edit(id) {
+
+}
 
 

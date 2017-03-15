@@ -1,4 +1,13 @@
-
+.wrapper {
+    overflow: hidden; /* will contain if #first is longer than #second */
+}
+.first {
+    width: 50%;
+    float:left; /* add this */
+}
+.second {
+    overflow: hidden; /* if you don't want #second to wrap below #first */
+}
 
 .about h4{
   color: white;

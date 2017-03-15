@@ -46,6 +46,8 @@ app.get('/more_questions/:id', questions.more);
 app.get('/home', home.view);
 app.get('/login', home.login);
 
+app.get('/delete/:id', home.delete_intention);
+
 app.get('/intention', intention.view);
 app.get('/intentionA', intention.viewA);
 app.get('/intentionB', intention.viewB);

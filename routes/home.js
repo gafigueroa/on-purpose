@@ -11,6 +11,17 @@ exports.login = function(req, res){
 	res.render('login');
 };
 
+exports.delete_intention = function(req, res){
+	var intention = null;
+	for (var i = 0; i < intentions.intentions.length; i++){ 
+		intention = intentions.intentions[i];
+		if (intention != null && parseInt(intention.id) == parseInt(req.params.id)) {
+			delete intentions.intentions[i];
+		}
+	}
+	res.json({});
+}
+
 exports.previous_intention = function(req, res){
 	var moods = ["very positive",
 			"positive", 
@@ -20,7 +31,12 @@ exports.previous_intention = function(req, res){
 			"negative",
 			"very negative"];
 
-	var intentions_copy = intentions.intentions.slice().reverse();
+	var intentions_copy = [];
+	for (var i = intentions.intentions.length - 1; i >= 0; i--) {
+		if (intentions.intentions[i] != null){
+			intentions_copy.push(intentions.intentions[i]);
+		}
+	}
 	console.log("start");
 	for (var i = 0; i < intentions_copy; i++){
 		var intention = intentions_copy[i];
@@ -49,7 +65,7 @@ exports.intermediate_page = function(req,res){
 	var intention_found = false;
 
 	for (var i = 0; i < intentions.intentions.length; i++){
-		if (parseInt(intentions.intentions[i].id) == parseInt(id)){
+		if (intention != null && parseInt(intentions.intentions[i].id) == parseInt(id)){
 			var intention = intentions.intentions[i];
 			intention_found = true;
 			res.render('intermediate', {

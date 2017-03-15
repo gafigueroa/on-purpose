@@ -37,7 +37,20 @@ exports.get_intentions_json = function(req, res){
 
 exports.save_intention = function(req, res){
 	var new_data = req.body;
-	var new_id = data.intentions[data.intentions.length - 1].id + 1;
+	var new_id = 1;
+
+	var intentions_copy = [];
+	for (var i = data.intentions.length - 1; i >= 0; i--) {
+		if (data.intentions[i] != null){
+			intentions_copy.push(data.intentions[i]);
+		}
+	}
+	if (intentions_copy.length > 0){
+		var last_intention = intentions_copy[intentions_copy.length - 1];
+		if (last_intention != null){
+			new_id = last_intention.id + 1;
+		}
+	}
 	new_data["id"] = new_id;
 	data.intentions.push(new_data);
 	res.json(new_data);
@@ -58,7 +71,7 @@ exports.save_answers = function(req, res){
 
 	for (var i = 0; i < data.intentions.length; i++) {
 		var intention = data.intentions[i];
-		if (intention.id == id){
+		if (intention != null && intention.id == id){
 			if (!(answers in intention)){
 				intention["answers"] = [];
 			}
