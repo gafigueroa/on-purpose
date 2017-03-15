@@ -65,7 +65,8 @@ exports.intermediate_page = function(req,res){
 	var intention_found = false;
 
 	for (var i = 0; i < intentions.intentions.length; i++){
-		if (intention != null && parseInt(intentions.intentions[i].id) == parseInt(id)){
+		var intention = intentions.intentions[i];
+		if (intention != null && parseInt(intention.id) == parseInt(id)){
 			var intention = intentions.intentions[i];
 			intention_found = true;
 			res.render('intermediate', {
