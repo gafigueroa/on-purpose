@@ -1,0 +1,17 @@
+COGS 120/CSE 170
+Mindfulness (2:10 studio)
+
+Team BlueSky
+------------
+Guillermo Figueroa Benitez
+Priyanka Dasgupta
+Evan Schmitz
+Stefan Wooding
+
+To run:
+Once in the directory containing this file, type:
+
+   node app.js 
+
+The application will then be accessible from localhost:3000
+Enjoy!
